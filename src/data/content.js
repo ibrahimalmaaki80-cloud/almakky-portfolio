@@ -283,40 +283,41 @@ export const brands = [
   {
     id: 'coded',
     name: 'coded',
-    logo: null,
-    tagline: { ar: 'تصوير فوتوغرافي وفيديو', en: 'Photography & video' },
+    logo:  { type: 'image', src: '/media/sodic-01.jpg', alt: 'SODIC — campaign image' },
+,
+    tagline: { ar: 'تصوير فوتوغرافي ', en: 'Photography & video' },
     year: '',
     location: { ar: '', en: '' },
-    role: { ar: 'مصور فوتوغرافي ومصور فيديو', en: 'Photographer & Videographer' },
+    role: { ar: 'مصور فوتوغرافي', en: 'Photographer' },
     description: {
-      ar: 'تفاصيل المشروع ستُضاف قريبًا.',
-      en: 'Project details coming soon.',
+      ar: 'لوكال براند متخصص في الفاشون.',
+      en: 'local fashion brand.',
     },
     media: [
       {
     type: 'image',
     src: '/media/1.webp',
-    alt: 'Eagle campaign'
+    alt: ' coded campaign'
   },
   {
     type: 'image',
     src: '/media/2.webp',
-    alt: 'Eagle campaign'
+    alt: 'coded campaign'
   },
   {
     type: 'image',
     src: '/media/3.webp',
-    alt: 'Eagle campaign'
+    alt: 'coded campaign'
   },
   {
     type: 'image',
     src: '/media/4.webp',
-    alt: 'Eagle campaign'
+    alt: 'coded campaign'
   },
   {
     type: 'image',
     src: '/media/5.webp',
-    alt: 'Eagle campaign'
+    alt: 'coded campaign'
   },
     ],
   },
