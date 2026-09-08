@@ -1,0 +1,25 @@
+.clients h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.clients__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-5);
+}
+
+.clients__list li {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--ink-soft);
+  transition: color 0.3s ease;
+}
+
+.clients__list li:hover {
+  color: var(--ink);
+}

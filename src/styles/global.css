@@ -1,0 +1,238 @@
+/* ============================================================
+   DESIGN TOKENS
+   Palette: warm ivory ground, ink charcoal, muted champagne line.
+   Type: Fraunces (EN display) / Noto Kufi Arabic (AR display)
+         Inter (EN body) / IBM Plex Sans Arabic (AR body)
+   ============================================================ */
+:root {
+  --ivory: #f6f1e7;
+  --ivory-deep: #efe7d8;
+  --sand: #e2d6bf;
+  --ink: #211d1a;
+  --ink-soft: #4a4440;
+  --line: #d8cbae;
+  --champagne: #a9895f;
+  --champagne-soft: #cbb491;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 2.75rem;
+  --space-5: 4.5rem;
+  --space-6: 7.5rem;
+
+  --max-width: 1240px;
+  --radius: 2px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html[lang='en'] {
+  --font-display: 'Fraunces', 'Iowan Old Style', serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+html[lang='ar'] {
+  --font-display: 'Noto Kufi Arabic', 'Segoe UI', sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+html[lang='ar'] h1,
+html[lang='ar'] h2,
+html[lang='ar'] h3,
+html[lang='ar'] h4 {
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  max-width: 62ch;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-5);
+  }
+}
+
+.section {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--line);
+}
+
+.section--tight {
+  padding: var(--space-5) 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--champagne);
+  font-weight: 500;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--champagne);
+  display: inline-block;
+}
+
+html[dir='rtl'] .eyebrow::before {
+  order: 2;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.9em 1.9em;
+  border: 1px solid var(--ink);
+  font-size: 0.95rem;
+  transition: background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: var(--ivory);
+}
+
+.btn--primary:hover {
+  background: var(--champagne);
+  border-color: var(--champagne);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink-soft);
+}
+
+.btn--ghost:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--ivory);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Fade-up reveal, used sparingly for entrance moments */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Work section ---- */
+.work__intro {
+  max-width: 60ch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.work__intro h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.work__subtitle {
+  color: var(--ink-soft);
+}
+
+.work__list {
+  margin-top: var(--space-4);
+}
